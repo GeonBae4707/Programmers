@@ -74,7 +74,7 @@ public class Solution
                     arr[i] = arr[i] * 2 + 1;
                 }
             }
-            if(b)
+            if (b)
             {
                 answer++;
             }
