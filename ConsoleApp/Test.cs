@@ -12,7 +12,7 @@ namespace ConsoleApp
         {
             Solution test = new Solution();
             //test.solution("aukks", "wbqd", 5);
-            test.solution(new int[] { 2, 6, 8, 14 });
+            test.solution(new string[] { "banana", "apple", "rice", "pork", "pot" }, new int[] { 3, 2, 2, 2, 1 }, new string[] { "chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana" });
 
             Console.ReadKey();
         }
