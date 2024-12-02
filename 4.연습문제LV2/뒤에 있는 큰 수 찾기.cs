@@ -34,32 +34,60 @@
 //입출력 예 #2
 //9는 뒷 큰수가 없으므로 -1입니다. 1의 뒷 큰수는 5이며, 5와 3의 뒷 큰수는 6입니다. 6과 2는 뒷 큰수가 없으므로 -1입니다. 위 수들을 차례대로 배열에 담으면 [-1, 5, 6, 6, -1, -1]이 됩니다.
 
-using System;
+//using System;
 
+//public class Solution
+//{
+//    public int[] solution(int[] numbers)
+//    {
+//        int[] answer = new int[numbers.Length];
+//        int max = 0;
+
+//        for (int i = numbers.Length - 1; i >= 0; i--)
+//        {            
+//            if (numbers[i] >= max)
+//            {
+//                max = numbers[i];
+//                answer[i] = -1;
+//            }
+//            else
+//            {
+//                for (int j = i + 1; j < numbers.Length; j++)
+//                {
+//                    if (numbers[j] > numbers[i])
+//                    {
+//                        answer[i] = numbers[j];
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+
+//        return answer;
+//    }
+//}
+
+using System;
+using System.Collections.Generic;
 public class Solution
 {
     public int[] solution(int[] numbers)
     {
         int[] answer = new int[numbers.Length];
+        Array.Fill(answer, -1);
+        Stack<int> stack = new Stack<int>();
 
-        for (int i = 0; i < numbers.Length; i++)
+        for (int i = numbers.Length - 1; i >= 0; i--)
         {
-            bool b = false;
-
-            for (int j = i; j < numbers.Length; j++)
+            while (stack.Count > 0 && stack.Peek() <= numbers[i])
             {
-                if (numbers[i] < numbers[j])
-                {
-                    b = true;
-                    answer[i] = numbers[j];
-                    break;
-                }
+                stack.Pop();
             }
-
-            if (b == false)
+            if (stack.Count > 0)
             {
-                answer[i] = -1;
+                answer[i] = stack.Peek();
             }
+            stack.Push(numbers[i]);
         }
 
         return answer;
