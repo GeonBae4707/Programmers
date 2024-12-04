@@ -11,8 +11,7 @@ namespace ConsoleApp
         static void Main()
         {
             Solution test = new Solution();
-            //test.solution(new int[] { 1, 2, 3, 4, 5 }, 7);
-            test.solution(new int[] { 2, 2, 2, 2, 2 }, 6);
+            test.solution(new string[] { "AN", "CF", "MJ", "RT", "NA" }, new int[] { 5, 3, 2, 7, 5 });
 
             Console.ReadKey();
         }
