@@ -11,7 +11,8 @@ namespace ConsoleApp
         static void Main()
         {
             Solution test = new Solution();
-            test.solution(new string[] { "AN", "CF", "MJ", "RT", "NA" }, new int[] { 5, 3, 2, 7, 5 });
+            //test.solution("(({)})");
+            test.solution("[](){}");
 
             Console.ReadKey();
         }
